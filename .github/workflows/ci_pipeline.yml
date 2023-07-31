@@ -5,7 +5,8 @@ name: Student-Registry-App CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: 
+      - master
   
 jobs:
   build:
