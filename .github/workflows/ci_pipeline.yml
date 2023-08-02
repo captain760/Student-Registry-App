@@ -20,6 +20,16 @@ jobs:
       with:
         node-version: 18.x
         cache: 'npm'
-    - run: npm install
-    
+    - run: npm install    
     - run: npm test
+    
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Render Deploy Action
+      uses: johnbeynon/render-deploy-action@v0.0.8
+      with:    
+        service-id: SERVICE_ID
+        api-key: RENDER_API
+  
